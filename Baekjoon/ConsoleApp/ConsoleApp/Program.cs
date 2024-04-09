@@ -11,8 +11,8 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Lv0Helper lv0Helper = new Lv0Helper();
-            lv0Helper.Lv0Method();
+            Level1Helper lv0Helper = new Level1Helper();
+            lv0Helper.Level1Method();
         }
     }
 }
