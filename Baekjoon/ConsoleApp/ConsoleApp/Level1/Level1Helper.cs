@@ -23,8 +23,8 @@ namespace ConsoleApp.Lv0
                 Console.WriteLine(ex.Message);
             }
         }
-        #region 문자열 출력하기
 
+        #region a+b 출력하기
         /// <summary>
         /// https://www.acmicpc.net/problem/1000
         /// </summary>
@@ -39,6 +39,25 @@ namespace ConsoleApp.Lv0
                 int a = Convert.ToInt32(arr[0]);
                 int b = Convert.ToInt32(arr[1]);
                 Console.WriteLine(a+b);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+
+        #region a-b 출력하기
+        internal void Level1Method02()
+        {
+            try
+            {
+                string[] arr;
+                arr = Console.ReadLine().Split(' ');
+                int a = Convert.ToInt32(arr[0]);
+                int b = Convert.ToInt32(arr[0]);
+                Console.WriteLine(a-b);
+
             }
             catch (Exception ex)
             {
