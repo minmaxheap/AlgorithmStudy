@@ -16,6 +16,8 @@ namespace ConsoleApp.Lv0
             try
             {
                 Level1Method01();
+                Level1Method02();
+                Level1Method03();
 
             }
             catch (Exception ex)
@@ -55,11 +57,30 @@ namespace ConsoleApp.Lv0
                 string[] arr;
                 arr = Console.ReadLine().Split(' ');
                 int a = Convert.ToInt32(arr[0]);
-                int b = Convert.ToInt32(arr[0]);
+                int b = Convert.ToInt32(arr[1]);
                 Console.WriteLine(a-b);
 
             }
             catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+
+        #region a*b 출력하기
+        internal void Level1Method03()
+        {
+            try
+            {
+                string[] arr;
+                arr = Console.ReadLine().Split(' ');
+                int a = Convert.ToInt32(arr[0]);
+                int b = Convert.ToInt32(arr[1]);
+                Console.WriteLine(a*b);
+
+            }
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
