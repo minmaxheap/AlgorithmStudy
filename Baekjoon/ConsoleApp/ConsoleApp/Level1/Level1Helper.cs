@@ -18,6 +18,8 @@ namespace ConsoleApp.Lv0
                 Level1Method01();
                 Level1Method02();
                 Level1Method03();
+                Level1Method04();
+
 
             }
             catch (Exception ex)
@@ -81,6 +83,49 @@ namespace ConsoleApp.Lv0
 
             }
             catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region a/b 출력하기
+        internal void Level1Method04()
+        {
+            try
+            {
+                //정수 나눗셈 규칙: C#에서 두 정수형 변수를 나눌 때, 결과는 소숫점 값이 있더라도 반드시 정수(int) 형태로 나오게 된다. 
+                //즉, 소숫점 이하 값은 버려지고, 정수 부분만 남게 된다. 이러한 동작은 "정수 나눗셈"이라고도 불린다.
+
+                string[] arr;
+                arr = Console.ReadLine().Split(' ');
+                double a = Convert.ToDouble(arr[0]);
+                double b = Convert.ToDouble(arr[1]);
+                Console.WriteLine(a / b);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 사칙연산
+        internal void Level1Method05()
+        {
+            try
+            {
+
+                string[] arr;
+                arr = Console.ReadLine().Split(' ');
+                int a = Convert.ToInt32(arr[0]);
+                int b = Convert.ToInt32(arr[1]);
+                Console.WriteLine(a+b);
+                Console.WriteLine(a-b);
+                Console.WriteLine(a*b);
+                Console.WriteLine(a/b);
+                Console.WriteLine(a%b);
+
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
