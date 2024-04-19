@@ -19,6 +19,8 @@ namespace ConsoleApp.Lv0
                 Level1Method02();
                 Level1Method03();
                 Level1Method04();
+                Level1Method05();
+                Level1Method06();
 
 
             }
@@ -113,7 +115,6 @@ namespace ConsoleApp.Lv0
         {
             try
             {
-
                 string[] arr;
                 arr = Console.ReadLine().Split(' ');
                 int a = Convert.ToInt32(arr[0]);
@@ -123,6 +124,22 @@ namespace ConsoleApp.Lv0
                 Console.WriteLine(a*b);
                 Console.WriteLine(a/b);
                 Console.WriteLine(a%b);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region ??!
+        internal void Level1Method06()
+        {
+            try
+            {
+                string str;
+                str = Console.ReadLine();
+                Console.WriteLine($"{str}??!");
 
             }
             catch (Exception ex)
