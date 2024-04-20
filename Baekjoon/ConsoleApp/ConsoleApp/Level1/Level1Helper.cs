@@ -15,12 +15,13 @@ namespace ConsoleApp.Lv0
         {
             try
             {
-                Level1Method01();
-                Level1Method02();
-                Level1Method03();
-                Level1Method04();
-                Level1Method05();
-                Level1Method06();
+                //Level1Method01();
+                //Level1Method02();
+                //Level1Method03();
+                //Level1Method04();
+                //Level1Method05();
+                //Level1Method06();
+                Level1Method07();
 
 
             }
@@ -140,6 +141,24 @@ namespace ConsoleApp.Lv0
                 string str;
                 str = Console.ReadLine();
                 Console.WriteLine($"{str}??!");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 1998년생인 내가 태국에서는 2541년생?!
+        internal void Level1Method07()
+        {
+            try
+            {
+                //2541-1998을 뺀 값이 불기연도와 서기연도의 차이니까, 불기연도가 주어지면 거기서 그 값을 빼면 된다.
+                string str;
+                str = Console.ReadLine();
+                int boolki = Convert.ToInt32(str);
+                Console.WriteLine($"{boolki-543}");
 
             }
             catch (Exception ex)
