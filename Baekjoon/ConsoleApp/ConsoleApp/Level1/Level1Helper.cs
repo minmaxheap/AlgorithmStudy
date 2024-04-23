@@ -167,5 +167,83 @@ namespace ConsoleApp.Lv0
             }
         }
         #endregion
+        #region 나머지
+        internal void Level1Method08()
+        {
+            try
+            {
+                string[] arr;
+                arr = Console.ReadLine().Split(' ');
+                int a = Convert.ToInt32(arr[0]);
+                int b = Convert.ToInt32(arr[1]);
+                int c = Convert.ToInt32(arr[2]);
+
+                //첫째 줄에(A+B)% C, 둘째 줄에((A% C) +(B % C))% C, 셋째 줄에(A×B)% C, 넷째 줄에((A% C) × (B % C))% C를 출력한다.
+                Console.WriteLine((a + b) % c);
+                Console.WriteLine(((a%c)+(b%c))%c);
+                Console.WriteLine(((a%c)*(b%c))%c);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 곱셈
+        internal void Level1Method09()
+        {
+            try
+            {
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 꼬마 정민
+        internal void Level1Method10()
+        {
+            try
+            {
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 고양이
+        internal void Level1Method12()
+        {
+            try
+            {
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 개
+        internal void Level1Method13()
+        {
+            try
+            {
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
     }
 }
