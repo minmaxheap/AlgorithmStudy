@@ -21,8 +21,10 @@ namespace ConsoleApp.Lv0
                 //Level1Method04();
                 //Level1Method05();
                 //Level1Method06();
-                Level1Method07();
-
+                //Level1Method07();
+                //Level1Method08);
+                //Level1Method09();
+                Level1Method10();
 
             }
             catch (Exception ex)
@@ -180,8 +182,10 @@ namespace ConsoleApp.Lv0
 
                 //첫째 줄에(A+B)% C, 둘째 줄에((A% C) +(B % C))% C, 셋째 줄에(A×B)% C, 넷째 줄에((A% C) × (B % C))% C를 출력한다.
                 Console.WriteLine((a + b) % c);
-                Console.WriteLine(((a%c)+(b%c))%c);
-                Console.WriteLine(((a%c)*(b%c))%c);
+                Console.WriteLine(((a % c) + (b % c)) % c);
+                Console.WriteLine((a * b) % c);
+                Console.WriteLine(((a % c) * (b % c)) % c);
+
             }
             catch (Exception ex)
             {
@@ -194,7 +198,19 @@ namespace ConsoleApp.Lv0
         {
             try
             {
+                string str1 = Console.ReadLine();
+                string str2 = Console.ReadLine();
 
+                int int1 = Convert.ToInt32(str1);
+                int int2 = Convert.ToInt32(str2);
+
+                int a = int2 / 100;
+                int b = (int2 % 100) / 10;
+                int c = int2 % 10;
+                Console.WriteLine(int1 * c);
+                Console.WriteLine(int1 * b);
+                Console.WriteLine(int1 * a);
+                Console.WriteLine(int1 * int2);
 
             }
             catch (Exception ex)
@@ -208,7 +224,14 @@ namespace ConsoleApp.Lv0
         {
             try
             {
-
+                //문제 조건을 잘 보고 풀기, 정수라는 조건이 없는데 자꾸 int로 변환해서 틀림
+                string[] arr;
+                arr = Console.ReadLine().Split(' ');
+                /*                double a = Convert.ToDouble(arr[0]);
+                                double b = Convert.ToDouble(arr[1]);
+                                double c = Convert.ToDouble(arr[2]);*/
+                double[] ints = arr.Select(s => Convert.ToDouble(s)).ToArray();
+                Console.WriteLine(ints.Sum());
 
             }
             catch (Exception ex)
