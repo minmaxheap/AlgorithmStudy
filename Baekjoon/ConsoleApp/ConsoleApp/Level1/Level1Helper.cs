@@ -24,7 +24,9 @@ namespace ConsoleApp.Lv0
                 //Level1Method07();
                 //Level1Method08);
                 //Level1Method09();
-                Level1Method10();
+                //Level1Method10();
+                Level1Method13();
+
 
             }
             catch (Exception ex)
@@ -259,6 +261,11 @@ namespace ConsoleApp.Lv0
         {
             try
             {
+                Console.WriteLine(@"|\_/|");
+                Console.WriteLine(@"|q p|   /}");
+                Console.WriteLine(@"( 0 )""""""\");
+                Console.WriteLine(@"|""^""`    |");
+                Console.WriteLine(@"||_/=\\__|");
 
 
             }
