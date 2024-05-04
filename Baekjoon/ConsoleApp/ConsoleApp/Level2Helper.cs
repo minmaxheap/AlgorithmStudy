@@ -38,8 +38,20 @@ namespace ConsoleApp
         #region 두 수 비교하기
         internal void Level2Method01()
         {
-            try
+            try 
             {
+                string[] arr = Console.ReadLine().Split(' ');
+                int a = Convert.ToInt32(arr[0]);
+                int b = Convert.ToInt32(arr[1]);
+
+                int c = a - b;
+                string str;
+
+                if (c > 0) str = ">";
+                else if (c < 0) str = "<";
+                else str = "==";
+                Console.WriteLine(str);
+
             }
             catch (Exception ex)
             {
