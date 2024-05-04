@@ -1,4 +1,4 @@
-﻿using ConsoleApp.Lv0;
+﻿using ConsoleApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,10 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Level1Helper lv0Helper = new Level1Helper();
-            lv0Helper.Level1Method();
+            //Level1Helper lv1Helper = new Level1Helper();
+            //lv1Helper.Level1Method();
+            Level2Helper lv2Helper = new Level2Helper();
+            lv2Helper.Level2Method();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp.Lv0
+namespace ConsoleApp
 {
     /// <summary>
     /// Level1. 입출력과 사칙연산
@@ -57,7 +57,6 @@ namespace ConsoleApp.Lv0
             }
         }
         #endregion
-
         #region a-b 출력하기
         internal void Level1Method02()
         {
@@ -76,7 +75,6 @@ namespace ConsoleApp.Lv0
             }
         }
         #endregion
-
         #region a*b 출력하기
         internal void Level1Method03()
         {
