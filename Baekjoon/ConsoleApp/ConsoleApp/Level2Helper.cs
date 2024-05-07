@@ -90,16 +90,22 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region a*b 출력하기
+        #region 윤년
         internal void Level2Method03()
         {
             try
             {
-                string[] arr;
-                arr = Console.ReadLine().Split(' ');
-                int a = Convert.ToInt32(arr[0]);
-                int b = Convert.ToInt32(arr[1]);
-                Console.WriteLine(a*b);
+                //윤년은 4의 배수 AND (100의 배수가 아닐 때 OR 400의 배수)
+                //윤년이면 1, 아니면 0 출력
+                string str;
+                str = Console.ReadLine();
+                int number = Convert.ToInt32(str);
+                bool leapFlag = false;
+                if(number % 4 == 0 && (number % 100 != 0 || number % 400 == 0))
+                {
+                    leapFlag = true;
+                }
+                Console.WriteLine(leapFlag ? 1 : 0);
 
             }
             catch(Exception ex)
