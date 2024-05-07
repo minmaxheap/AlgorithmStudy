@@ -50,6 +50,11 @@ namespace ConsoleApp
                 if (c > 0) str = ">";
                 else if (c < 0) str = "<";
                 else str = "==";
+
+                //if (a>b) str = ">";
+                //else if (a<b) str = "<";
+                //else str = "==";
+
                 Console.WriteLine(str);
 
             }
@@ -59,16 +64,24 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region a-b 출력하기
+        #region 시험 성적
         internal void Level2Method02()
         {
             try
             {
-                string[] arr;
-                arr = Console.ReadLine().Split(' ');
-                int a = Convert.ToInt32(arr[0]);
-                int b = Convert.ToInt32(arr[1]);
-                Console.WriteLine(a-b);
+                string str;
+                str = Console.ReadLine();
+                int score = Convert.ToInt32(str);
+
+                string grade;
+                if (score >= 90) grade = "A";
+                else if (score >= 80) grade = "B";
+                else if (score >= 70) grade = "C";
+                else if (score >= 60) grade = "D";
+                else grade = "F";
+
+
+                Console.WriteLine(grade);
 
             }
             catch (Exception ex)
