@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -145,21 +146,20 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region 사칙연산
+        #region 알람 시계
         internal void Level2Method05()
         {
             try
             {
                 string[] arr;
                 arr = Console.ReadLine().Split(' ');
-                int a = Convert.ToInt32(arr[0]);
-                int b = Convert.ToInt32(arr[1]);
-                Console.WriteLine(a+b);
-                Console.WriteLine(a-b);
-                Console.WriteLine(a*b);
-                Console.WriteLine(a/b);
-                Console.WriteLine(a%b);
+                int hour = Convert.ToInt32(arr[0]);
+                int minute = Convert.ToInt32(arr[1]);
 
+                DateTime cur = new DateTime(2024, 5, 11, hour, minute, 0);
+                int subMin = -45;
+                DateTime nowDt = cur.AddMinutes(subMin);
+                Console.WriteLine($"{nowDt.Hour} {nowDt.Minute}");
             }
             catch (Exception ex)
             {
