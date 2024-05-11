@@ -153,11 +153,11 @@ namespace ConsoleApp
             {
                 string[] arr;
                 arr = Console.ReadLine().Split(' ');
+                int subMin = Convert.ToInt32(Console.ReadLine());
                 int hour = Convert.ToInt32(arr[0]);
                 int minute = Convert.ToInt32(arr[1]);
 
                 DateTime cur = new DateTime(2024, 5, 11, hour, minute, 0);
-                int subMin = -45;
                 DateTime nowDt = cur.AddMinutes(subMin);
                 Console.WriteLine($"{nowDt.Hour} {nowDt.Minute}");
             }
