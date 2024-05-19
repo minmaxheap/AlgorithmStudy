@@ -146,20 +146,45 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region 알람 시계
+        #region 주사위 세개
         internal void Level2Method05()
         {
             try
             {
+                //같은 눈이 3개가 나오면 10,000원 + (같은 눈)×1,000원의 상금을 받게 된다.
+                //같은 눈이 2개만 나오는 경우에는 1,000원 + (같은 눈)×100원의 상금을 받게 된다.
+                //모두 다른 눈이 나오는 경우에는(그 중 가장 큰 눈)×100원의 상금을 받게 된다.
                 string[] arr;
                 arr = Console.ReadLine().Split(' ');
-                int subMin = Convert.ToInt32(Console.ReadLine());
-                int hour = Convert.ToInt32(arr[0]);
-                int minute = Convert.ToInt32(arr[1]);
+                int dice1 = Convert.ToInt32(arr[0]);
+                int dice2 = Convert.ToInt32(arr[1]);
+                int dice3 = Convert.ToInt32(arr[2]);
 
-                DateTime cur = new DateTime(2024, 5, 11, hour, minute, 0);
-                DateTime nowDt = cur.AddMinutes(subMin);
-                Console.WriteLine($"{nowDt.Hour} {nowDt.Minute}");
+                int price;
+
+                if (dice1 == dice2 && dice2 == dice3)
+                {
+                    price = 10000 + dice1 * 1000;
+                }
+                else if (dice1 == dice2 || dice2 == dice3 || dice1 == dice3)
+                {
+                    bool bFlag1 = dice1 == dice2 ? true : false;
+                    bool bFlag2 = dice2 == dice3 ? true : false;
+                    if (bFlag1) price = 1000 + dice1 * 100;
+                    else if(bFlag2) price = 1000 + dice2 * 100;
+                    else price = 1000 + dice3 * 100;
+                }
+                else
+                {
+                    int[] value = new int[3];
+                    value[0] = dice1;
+                    value[1] = dice2;
+                    value[2] = dice3;
+                    int max = value.Max();
+                    price = max * 100;
+                }
+
+                Console.WriteLine($"{price}");
             }
             catch (Exception ex)
             {
