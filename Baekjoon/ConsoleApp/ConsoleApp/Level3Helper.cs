@@ -8,25 +8,25 @@ using System.Threading.Tasks;
 namespace ConsoleApp
 {
     /// <summary>
-    /// Level2. 조건문
+    /// Level3. 반복문
     /// </summary>
-    internal class Level2Helper
+    internal class Level3Helper
     {
         internal void Run()
         {
             try
             {
-                Level2Method01();
-                //Level2Method02();
-                //Level2Method03();
-                //Level2Method04();
-                //Level2Method05();
-                //Level2Method06();
-                //Level2Method07();
-                //Level2Method08);
-                //Level2Method09();
-                //Level2Method10();
-                //Level2Method13();
+                Level3Method01();
+                //Level3Method02();
+                //Level3Method03();
+                //Level3Method04();
+                //Level3Method05();
+                //Level3Method06();
+                //Level3Method07();
+                //Level3Method08);
+                //Level3Method09();
+                //Level3Method10();
+                //Level3Method13();
 
 
             }
@@ -36,27 +36,18 @@ namespace ConsoleApp
             }
         }
 
-        #region 두 수 비교하기
-        internal void Level2Method01()
+        #region 구구단
+        internal void Level3Method01()
         {
-            try 
+            try
             {
-                string[] arr = Console.ReadLine().Split(' ');
-                int a = Convert.ToInt32(arr[0]);
-                int b = Convert.ToInt32(arr[1]);
+                int num = Convert.ToInt32(Console.ReadLine());
+                for (int i = 1; i <= 9; i++)
+                {
+                    Console.WriteLine($"{num} * {i} = {num*i}");
 
-                int c = a - b;
-                string str;
+                }
 
-                if (c > 0) str = ">";
-                else if (c < 0) str = "<";
-                else str = "==";
-
-                //if (a>b) str = ">";
-                //else if (a<b) str = "<";
-                //else str = "==";
-
-                Console.WriteLine(str);
 
             }
             catch (Exception ex)
@@ -65,24 +56,20 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region 시험 성적
-        internal void Level2Method02()
+        #region A+B
+        internal void Level3Method02()
         {
             try
             {
-                string str;
-                str = Console.ReadLine();
-                int score = Convert.ToInt32(str);
-
-                string grade;
-                if (score >= 90) grade = "A";
-                else if (score >= 80) grade = "B";
-                else if (score >= 70) grade = "C";
-                else if (score >= 60) grade = "D";
-                else grade = "F";
-
-
-                Console.WriteLine(grade);
+                int num;
+                num = Convert.ToInt32(Console.ReadLine());
+                for(int i = 1; i <= num; i++)
+                {
+                    string[] arr = Console.ReadLine().Split(' ');
+                    int a = Convert.ToInt32(arr[0]);
+                    int b = Convert.ToInt32(arr[1]);
+                    Console.WriteLine(a + b);
+                }
 
             }
             catch (Exception ex)
@@ -92,7 +79,7 @@ namespace ConsoleApp
         }
         #endregion
         #region 윤년
-        internal void Level2Method03()
+        internal void Level3Method03()
         {
             try
             {
@@ -102,21 +89,21 @@ namespace ConsoleApp
                 str = Console.ReadLine();
                 int number = Convert.ToInt32(str);
                 bool leapFlag = false;
-                if(number % 4 == 0 && (number % 100 != 0 || number % 400 == 0))
+                if (number % 4 == 0 && (number % 100 != 0 || number % 400 == 0))
                 {
                     leapFlag = true;
                 }
                 Console.WriteLine(leapFlag ? 1 : 0);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
         #endregion
         #region 사분면 고르기
-        internal void Level2Method04()
+        internal void Level3Method04()
         {
             try
             {
@@ -147,7 +134,7 @@ namespace ConsoleApp
         }
         #endregion
         #region 주사위 세개
-        internal void Level2Method05()
+        internal void Level3Method05()
         {
             try
             {
@@ -171,7 +158,7 @@ namespace ConsoleApp
                     bool bFlag1 = dice1 == dice2 ? true : false;
                     bool bFlag2 = dice2 == dice3 ? true : false;
                     if (bFlag1) price = 1000 + dice1 * 100;
-                    else if(bFlag2) price = 1000 + dice2 * 100;
+                    else if (bFlag2) price = 1000 + dice2 * 100;
                     else price = 1000 + dice3 * 100;
                 }
                 else

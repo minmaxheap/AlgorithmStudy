@@ -11,7 +11,7 @@ namespace ConsoleApp
     /// </summary>
     internal class Level1Helper
     {
-        internal void Level1Method()
+        internal void Run()
         {
             try
             {
