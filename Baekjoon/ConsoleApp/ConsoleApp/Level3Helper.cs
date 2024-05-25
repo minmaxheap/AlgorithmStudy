@@ -78,22 +78,23 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region 윤년
+        #region 합
         internal void Level3Method03()
         {
             try
             {
-                //윤년은 4의 배수 AND (100의 배수가 아닐 때 OR 400의 배수)
-                //윤년이면 1, 아니면 0 출력
-                string str;
-                str = Console.ReadLine();
-                int number = Convert.ToInt32(str);
-                bool leapFlag = false;
-                if (number % 4 == 0 && (number % 100 != 0 || number % 400 == 0))
+                string str = Console.ReadLine();
+                if (string.IsNullOrEmpty(str)==false)
                 {
-                    leapFlag = true;
+
+                    int number = Convert.ToInt32(str);
+                    int sum = 0;
+                    for (int i = 1; i <= number; i++)
+                    {
+                        sum += i;
+                    }
+                    Console.WriteLine(sum);
                 }
-                Console.WriteLine(leapFlag ? 1 : 0);
 
             }
             catch (Exception ex)
