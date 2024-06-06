@@ -16,7 +16,7 @@ namespace ConsoleApp
         {
             try
             {
-                Level3Method01();
+                Level3Method05();
                 //Level3Method02();
                 //Level3Method03();
                 //Level3Method04();
@@ -44,7 +44,7 @@ namespace ConsoleApp
                 int num = Convert.ToInt32(Console.ReadLine());
                 for (int i = 1; i <= 9; i++)
                 {
-                    Console.WriteLine($"{num} * {i} = {num*i}");
+                    Console.WriteLine($"{num} * {i} = {num * i}");
 
                 }
 
@@ -63,7 +63,7 @@ namespace ConsoleApp
             {
                 int num;
                 num = Convert.ToInt32(Console.ReadLine());
-                for(int i = 1; i <= num; i++)
+                for (int i = 1; i <= num; i++)
                 {
                     string[] arr = Console.ReadLine().Split(' ');
                     int a = Convert.ToInt32(arr[0]);
@@ -84,7 +84,7 @@ namespace ConsoleApp
             try
             {
                 string str = Console.ReadLine();
-                if (string.IsNullOrEmpty(str)==false)
+                if (string.IsNullOrEmpty(str) == false)
                 {
 
                     int number = Convert.ToInt32(str);
@@ -103,30 +103,25 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region 사분면 고르기
+        #region 영수증
         internal void Level3Method04()
         {
             try
             {
 
-                int x = Convert.ToInt32(Console.ReadLine());
-                int y = Convert.ToInt32(Console.ReadLine());
+                long total = Convert.ToInt64(Console.ReadLine());
+                int count = Convert.ToInt32(Console.ReadLine());
+                long sum = 0;
 
-                int quadrant;
-                if (x > 0 && y > 0)
+                for (int i = 1; i <= count; i++)
                 {
-                    quadrant = 1;
+                    string[] arr = Console.ReadLine().Split(' ');
+                    long price = Convert.ToInt64(arr[0]);
+                    int count2 = Convert.ToInt32(arr[1]);
+
+                    sum += price * count2;
                 }
-                else if (x < 0 && y > 0)
-                {
-                    quadrant = 2;
-                }
-                else if (x < 0 && y < 0)
-                {
-                    quadrant = 3;
-                }
-                else quadrant = 4;
-                Console.WriteLine(quadrant);
+                Console.WriteLine(total == sum ? "Yes" : "No");
             }
             catch (Exception ex)
             {
@@ -134,45 +129,112 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region 주사위 세개
+        #region 코딩은 체육과목 입니다
         internal void Level3Method05()
         {
             try
             {
-                //같은 눈이 3개가 나오면 10,000원 + (같은 눈)×1,000원의 상금을 받게 된다.
-                //같은 눈이 2개만 나오는 경우에는 1,000원 + (같은 눈)×100원의 상금을 받게 된다.
-                //모두 다른 눈이 나오는 경우에는(그 중 가장 큰 눈)×100원의 상금을 받게 된다.
-                string[] arr;
-                arr = Console.ReadLine().Split(' ');
-                int dice1 = Convert.ToInt32(arr[0]);
-                int dice2 = Convert.ToInt32(arr[1]);
-                int dice3 = Convert.ToInt32(arr[2]);
-
-                int price;
-
-                if (dice1 == dice2 && dice2 == dice3)
+                int num = Convert.ToInt32(Console.ReadLine());
+                string byte4 = "long int";
+                int share = (num / 4) - 1;
+                string str = "";
+                for (int i = 1; i <= share; i++)
                 {
-                    price = 10000 + dice1 * 1000;
+                    str += "long ";
                 }
-                else if (dice1 == dice2 || dice2 == dice3 || dice1 == dice3)
+                Console.WriteLine($"{str}{byte4}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 빠른 A+B
+        internal void Level3Method06()
+        {
+            try
+            {
+                int count = Convert.ToInt32(Console.ReadLine());
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                for (int i = 0; i < count; i++)
                 {
-                    bool bFlag1 = dice1 == dice2 ? true : false;
-                    bool bFlag2 = dice2 == dice3 ? true : false;
-                    if (bFlag1) price = 1000 + dice1 * 100;
-                    else if (bFlag2) price = 1000 + dice2 * 100;
-                    else price = 1000 + dice3 * 100;
-                }
-                else
-                {
-                    int[] value = new int[3];
-                    value[0] = dice1;
-                    value[1] = dice2;
-                    value[2] = dice3;
-                    int max = value.Max();
-                    price = max * 100;
-                }
+                    string[] arr = Console.ReadLine().Split(' ');
+                    int a = Convert.ToInt32(arr[0]);
+                    int b = Convert.ToInt32(arr[1]);
+                    sb.Append($"{a + b}\n");
 
-                Console.WriteLine($"{price}");
+                }
+                Console.WriteLine(sb.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region A+B -7
+        internal void Level3Method07()
+        {
+            try
+            {
+                int count = Convert.ToInt32(Console.ReadLine());
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                for (int i = 0; i < count; i++)
+                {
+                    string[] arr = Console.ReadLine().Split(' ');
+                    int a = Convert.ToInt32(arr[0]);
+                    int b = Convert.ToInt32(arr[1]);
+                    sb.Append($"Case #{i + 1}: {a + b}\n");
+
+                }
+                Console.WriteLine(sb.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region A+B -8
+        internal void Level3Method08()
+        {
+            try
+            {
+                int count = Convert.ToInt32(Console.ReadLine());
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                for (int i = 1; i <= count; i++)
+                {
+                    string[] arr = Console.ReadLine().Split(' ');
+                    int a = Convert.ToInt32(arr[0]);
+                    int b = Convert.ToInt32(arr[1]);
+                    sb.Append($"Case #{i}: {a} + {b} = {a + b}\n");
+
+                }
+                Console.WriteLine(sb.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 별찍기 -1
+        internal void Level3Method09()
+        {
+            try
+            {
+                int count = Convert.ToInt32(Console.ReadLine());
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                for (int i = 1; i <= count; i++)
+                {
+                    for (int x = 1; x <= i; x++)
+                    {
+                        sb.Append("*");
+                        if (x == i) sb.Append("\n");
+                    }
+                }
+                Console.WriteLine(sb.ToString());
             }
             catch (Exception ex)
             {
