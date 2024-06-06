@@ -16,17 +16,7 @@ namespace ConsoleApp
         {
             try
             {
-                Level3Method05();
-                //Level3Method02();
-                //Level3Method03();
-                //Level3Method04();
-                //Level3Method05();
-                //Level3Method06();
-                //Level3Method07();
-                //Level3Method08);
-                //Level3Method09();
-                //Level3Method10();
-                //Level3Method13();
+                Level3Method10();
 
 
             }
@@ -233,6 +223,39 @@ namespace ConsoleApp
                         sb.Append("*");
                         if (x == i) sb.Append("\n");
                     }
+                }
+                Console.WriteLine(sb.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 별찍기 -2
+        internal void Level3Method10()
+        {
+            try
+            {
+                int count = Convert.ToInt32(Console.ReadLine());
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                for (int i = 1; i <= count; i++)
+                {
+                    //i : 1 2 3 4 5
+                    //x : 5 4 3 2 1
+                    //count - i : 4 3 2 1 0
+                    int a = count - i;
+                    for (int x = 1; x <= a; x++)
+                    {
+                        sb.Append(' ');
+                    }
+                    for (int y = 1; y <= i; y++)
+                    {
+                        sb.Append('*');
+                        if (y == i && y != count) sb.Append("\n");
+                    }
+
+
                 }
                 Console.WriteLine(sb.ToString());
             }
