@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 namespace ConsoleApp
 {
     /// <summary>
-    /// Level3. 반복문
+    /// Level4. 1차원 배열
     /// </summary>
-    internal class Level3Helper
+    internal class Level4Helper
     {
         internal void Run()
         {
             try
             {
-                Level3Method10();
+                Level4Method10();
 
 
             }
@@ -26,19 +26,23 @@ namespace ConsoleApp
             }
         }
 
-        #region 구구단
-        internal void Level3Method01()
+        #region 개수세기
+        internal void Level4Method01()
         {
             try
             {
+                int count = Convert.ToInt32(Console.ReadLine());
+                string[] arr = Console.ReadLine().Split(' ');
                 int num = Convert.ToInt32(Console.ReadLine());
-                for (int i = 1; i <= 9; i++)
+
+                int cnt = 0;
+                for (int i = 0; i < count; i++)
                 {
-                    Console.WriteLine($"{num} * {i} = {num * i}");
-
+                    int x = Convert.ToInt32(arr[i]);
+                    if (num == x)
+                        cnt++;
                 }
-
-
+                Console.WriteLine(cnt);
             }
             catch (Exception ex)
             {
@@ -47,7 +51,7 @@ namespace ConsoleApp
         }
         #endregion
         #region A+B
-        internal void Level3Method02()
+        internal void Level4Method02()
         {
             try
             {
@@ -69,7 +73,7 @@ namespace ConsoleApp
         }
         #endregion
         #region 합
-        internal void Level3Method03()
+        internal void Level4Method03()
         {
             try
             {
@@ -94,7 +98,7 @@ namespace ConsoleApp
         }
         #endregion
         #region 영수증
-        internal void Level3Method04()
+        internal void Level4Method04()
         {
             try
             {
@@ -120,7 +124,7 @@ namespace ConsoleApp
         }
         #endregion
         #region 코딩은 체육과목 입니다
-        internal void Level3Method05()
+        internal void Level4Method05()
         {
             try
             {
@@ -141,7 +145,7 @@ namespace ConsoleApp
         }
         #endregion
         #region 빠른 A+B
-        internal void Level3Method06()
+        internal void Level4Method06()
         {
             try
             {
@@ -164,7 +168,7 @@ namespace ConsoleApp
         }
         #endregion
         #region A+B -7
-        internal void Level3Method07()
+        internal void Level4Method07()
         {
             try
             {
@@ -187,7 +191,7 @@ namespace ConsoleApp
         }
         #endregion
         #region A+B -8
-        internal void Level3Method08()
+        internal void Level4Method08()
         {
             try
             {
@@ -210,7 +214,7 @@ namespace ConsoleApp
         }
         #endregion
         #region 별찍기 -1
-        internal void Level3Method09()
+        internal void Level4Method09()
         {
             try
             {
@@ -233,7 +237,7 @@ namespace ConsoleApp
         }
         #endregion
         #region 별찍기 -2
-        internal void Level3Method10()
+        internal void Level4Method10()
         {
             try
             {
@@ -266,7 +270,7 @@ namespace ConsoleApp
         }
         #endregion
         #region A + B - 5
-        internal void Level3Method11()
+        internal void Level4Method11()
         {
             try
             {
@@ -292,7 +296,7 @@ namespace ConsoleApp
         }
         #endregion
         #region A + B - 4
-        internal void Level3Method12()
+        internal void Level4Method12()
         {
             try
             {
