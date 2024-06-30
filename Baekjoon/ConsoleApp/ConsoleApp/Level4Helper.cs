@@ -16,7 +16,7 @@ namespace ConsoleApp
         {
             try
             {
-                Level4Method10();
+                Level4Method02();
 
 
             }
@@ -50,20 +50,33 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region A+B
+        #region X보다 작은 수
         internal void Level4Method02()
         {
+
             try
             {
-                int num;
-                num = Convert.ToInt32(Console.ReadLine());
-                for (int i = 1; i <= num; i++)
+                string? str = Console.ReadLine();
+                if (str == null) return;
+
+                string[] arr = str.Split(' ');
+                int cnt = Convert.ToInt32(str[0]);
+                int x = Convert.ToInt32(str[1]);
+
+                string? str2 = Console.ReadLine();
+                if (str2 == null) return;
+                string[] arr2 = str2.Split(' ');
+
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                for(int i = 0; i < cnt; i++)
                 {
-                    string[] arr = Console.ReadLine().Split(' ');
-                    int a = Convert.ToInt32(arr[0]);
-                    int b = Convert.ToInt32(arr[1]);
-                    Console.WriteLine(a + b);
+                    int temp = Convert.ToInt32(arr2[i]);
+                    if(temp < x)
+                    {
+                        sb.Append($"{temp} ");
+                    }
                 }
+                Console.WriteLine(sb.ToString().TrimEnd(' '));
 
             }
             catch (Exception ex)
@@ -72,23 +85,31 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region 합
+        #region 최소, 최대
         internal void Level4Method03()
         {
             try
             {
-                string str = Console.ReadLine();
-                if (string.IsNullOrEmpty(str) == false)
-                {
+                string? str = Console.ReadLine();
+                if (str == null) return;
 
-                    int number = Convert.ToInt32(str);
-                    int sum = 0;
-                    for (int i = 1; i <= number; i++)
-                    {
-                        sum += i;
-                    }
-                    Console.WriteLine(sum);
+                int cnt = Convert.ToInt32(str);
+
+                string? str2 = Console.ReadLine();
+                if (str2 == null) return;
+                string[] arr2 = str2.Split(' ');
+
+                int min = 0;
+                int max = 0;
+                int[] ints = new int[cnt];
+                for (int i = 0; i < cnt; i++)
+                {
+                    int temp = Convert.ToInt32(arr2[i]);
+                    ints[i] = temp;
                 }
+                min = ints.Min();
+               max = ints.Max();
+                Console.WriteLine($"{min} {max}");
 
             }
             catch (Exception ex)

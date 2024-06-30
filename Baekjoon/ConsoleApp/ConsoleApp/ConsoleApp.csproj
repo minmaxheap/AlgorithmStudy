@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Level1Helper.cs" />
+    <Compile Include="Level4Helper.cs" />
     <Compile Include="Level3Helper.cs" />
     <Compile Include="Level2Helper.cs" />
     <Compile Include="Program.cs" />
