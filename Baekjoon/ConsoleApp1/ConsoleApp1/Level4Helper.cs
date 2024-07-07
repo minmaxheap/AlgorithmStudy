@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace ConsoleApp1
 {
     /// <summary>
     /// Level4. 1차원 배열
@@ -68,10 +67,10 @@ namespace ConsoleApp
                 string[] arr2 = str2.Split(' ');
 
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                for(int i = 0; i < cnt; i++)
+                for (int i = 0; i < cnt; i++)
                 {
                     int temp = Convert.ToInt32(arr2[i]);
-                    if(temp < x)
+                    if (temp < x)
                     {
                         sb.Append($"{temp} ");
                     }
@@ -105,10 +104,26 @@ namespace ConsoleApp
                 for (int i = 0; i < cnt; i++)
                 {
                     int temp = Convert.ToInt32(arr2[i]);
-                    ints[i] = temp;
+                    if (i == 0)
+                    {
+                        min = temp;
+                        max = temp;
+
+                    }
+                    else
+                    {
+                        if (temp < min)
+                        {
+                            min = temp;
+                        }
+                        if (temp > max)
+                        {
+                            max = temp;
+                        }
+
+                    }
+
                 }
-                min = ints.Min();
-               max = ints.Max();
                 Console.WriteLine($"{min} {max}");
 
             }
@@ -118,25 +133,33 @@ namespace ConsoleApp
             }
         }
         #endregion
-        #region 영수증
+        #region 최댓값
         internal void Level4Method04()
         {
             try
             {
-
-                long total = Convert.ToInt64(Console.ReadLine());
-                int count = Convert.ToInt32(Console.ReadLine());
-                long sum = 0;
-
-                for (int i = 1; i <= count; i++)
+                int cnt = 9;
+                int[] ints = new int[cnt];
+                int max = 0;
+                int index = 0;
+                for (int i = 0; i < cnt; i++)
                 {
-                    string[] arr = Console.ReadLine().Split(' ');
-                    long price = Convert.ToInt64(arr[0]);
-                    int count2 = Convert.ToInt32(arr[1]);
-
-                    sum += price * count2;
+                    string str = Console.ReadLine();
+                    if(str == null) return;
+                    int temp = Convert.ToInt32(str);
+                    //ints[i] = temp;
+                    if (i == 0) max = temp;
+                    else if(temp>max)
+                    {
+                        max = temp;
+                        index = i;
+                    }
                 }
-                Console.WriteLine(total == sum ? "Yes" : "No");
+
+                Console.WriteLine(max);
+                Console.WriteLine(index);
+
+
             }
             catch (Exception ex)
             {

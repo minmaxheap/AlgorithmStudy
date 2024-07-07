@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace ConsoleApp1
 {
     /// <summary>
     /// Level2. 조건문
@@ -39,7 +38,7 @@ namespace ConsoleApp
         #region 두 수 비교하기
         internal void Level2Method01()
         {
-            try 
+            try
             {
                 string[] arr = Console.ReadLine().Split(' ');
                 int a = Convert.ToInt32(arr[0]);
@@ -102,14 +101,14 @@ namespace ConsoleApp
                 str = Console.ReadLine();
                 int number = Convert.ToInt32(str);
                 bool leapFlag = false;
-                if(number % 4 == 0 && (number % 100 != 0 || number % 400 == 0))
+                if (number % 4 == 0 && (number % 100 != 0 || number % 400 == 0))
                 {
                     leapFlag = true;
                 }
                 Console.WriteLine(leapFlag ? 1 : 0);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -171,7 +170,7 @@ namespace ConsoleApp
                     bool bFlag1 = dice1 == dice2 ? true : false;
                     bool bFlag2 = dice2 == dice3 ? true : false;
                     if (bFlag1) price = 1000 + dice1 * 100;
-                    else if(bFlag2) price = 1000 + dice2 * 100;
+                    else if (bFlag2) price = 1000 + dice2 * 100;
                     else price = 1000 + dice3 * 100;
                 }
                 else

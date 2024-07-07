@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace ConsoleApp1
 {
     /// <summary>
     /// Level1. 입출력과 사칙연산
@@ -49,7 +49,7 @@ namespace ConsoleApp
                 arr = Console.ReadLine().Split(' ');
                 int a = Convert.ToInt32(arr[0]);
                 int b = Convert.ToInt32(arr[1]);
-                Console.WriteLine(a+b);
+                Console.WriteLine(a + b);
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace ConsoleApp
                 arr = Console.ReadLine().Split(' ');
                 int a = Convert.ToInt32(arr[0]);
                 int b = Convert.ToInt32(arr[1]);
-                Console.WriteLine(a-b);
+                Console.WriteLine(a - b);
 
             }
             catch (Exception ex)
@@ -84,10 +84,10 @@ namespace ConsoleApp
                 arr = Console.ReadLine().Split(' ');
                 int a = Convert.ToInt32(arr[0]);
                 int b = Convert.ToInt32(arr[1]);
-                Console.WriteLine(a*b);
+                Console.WriteLine(a * b);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -122,11 +122,11 @@ namespace ConsoleApp
                 arr = Console.ReadLine().Split(' ');
                 int a = Convert.ToInt32(arr[0]);
                 int b = Convert.ToInt32(arr[1]);
-                Console.WriteLine(a+b);
-                Console.WriteLine(a-b);
-                Console.WriteLine(a*b);
-                Console.WriteLine(a/b);
-                Console.WriteLine(a%b);
+                Console.WriteLine(a + b);
+                Console.WriteLine(a - b);
+                Console.WriteLine(a * b);
+                Console.WriteLine(a / b);
+                Console.WriteLine(a % b);
 
             }
             catch (Exception ex)
@@ -160,7 +160,7 @@ namespace ConsoleApp
                 string str;
                 str = Console.ReadLine();
                 int boolki = Convert.ToInt32(str);
-                Console.WriteLine($"{boolki-543}");
+                Console.WriteLine($"{boolki - 543}");
 
             }
             catch (Exception ex)
