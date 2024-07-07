@@ -15,7 +15,7 @@ namespace ConsoleApp1
         {
             try
             {
-                Level4Method02();
+                Level4Method05();
 
 
             }
@@ -145,11 +145,11 @@ namespace ConsoleApp1
                 for (int i = 0; i < cnt; i++)
                 {
                     string str = Console.ReadLine();
-                    if(str == null) return;
+                    if (str == null) return;
                     int temp = Convert.ToInt32(str);
                     //ints[i] = temp;
                     if (i == 0) max = temp;
-                    else if(temp>max)
+                    else if (temp > max)
                     {
                         max = temp;
                         index = i;
@@ -157,7 +157,7 @@ namespace ConsoleApp1
                 }
 
                 Console.WriteLine(max);
-                Console.WriteLine(index);
+                Console.WriteLine(index + 1);
 
 
             }
@@ -167,20 +167,40 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region 코딩은 체육과목 입니다
+        #region 공 넣기
         internal void Level4Method05()
         {
             try
             {
-                int num = Convert.ToInt32(Console.ReadLine());
-                string byte4 = "long int";
-                int share = (num / 4) - 1;
-                string str = "";
-                for (int i = 1; i <= share; i++)
+                string? str = Console.ReadLine();
+                if (str == null) return;
+                string[] arr = str.Split(' ');
+                int n = Convert.ToInt32(arr[0]);
+                int m = Convert.ToInt32(arr[1]);
+
+                int[] basket = new int[n];
+                for (int i = 0; i < m; i++)
                 {
-                    str += "long ";
+                    string? str2 = Console.ReadLine();
+                    if (str2 == null) return;
+                    string[] arr2 = str2.Split(' ');
+                    int first = Convert.ToInt32(arr2[0])-1;
+                    int last = Convert.ToInt32(arr2[1])-1;
+                    int num = Convert.ToInt32(arr2[2]);
+                    for (int j = first; j <= last; j++)
+                    {
+                        basket[j] = num;
+                    }
+
                 }
-                Console.WriteLine($"{str}{byte4}");
+                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                //for(int x = 0; x< n; x++)
+                //{
+                //    sb.Append($"{ints[x]}");
+                //}
+                //Console.WriteLine(sb.ToString().TrimEnd());
+
+                Console.WriteLine(string.Join(" ", basket));
             }
             catch (Exception ex)
             {
