@@ -208,22 +208,43 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region 빠른 A+B
+        #region 공 바꾸기
         internal void Level4Method06()
         {
             try
             {
-                int count = Convert.ToInt32(Console.ReadLine());
-                System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                for (int i = 0; i < count; i++)
+                string? str = Console.ReadLine();
+                if (str == null) return;
+                string[] arr = str.Split(' ');
+                int n = Convert.ToInt32(arr[0]);
+                int m = Convert.ToInt32(arr[1]);
+
+                int[] basket = new int[n];
+                for(int cnt = 0; cnt < n; cnt++)
                 {
-                    string[] arr = Console.ReadLine().Split(' ');
-                    int a = Convert.ToInt32(arr[0]);
-                    int b = Convert.ToInt32(arr[1]);
-                    sb.Append($"{a + b}\n");
+                    basket[cnt]= cnt + 1;
+                }
+                for (int x = 0; x < m; x++)
+                {
+                    string? str2 = Console.ReadLine();
+                    if (str2 == null) return;
+                    string[] arr2 = str2.Split(' ');
+                    int i = Convert.ToInt32(arr2[0]) - 1;
+                    int j = Convert.ToInt32(arr2[1]) - 1;
+                    int a = basket[i];
+                    int b = basket[j];
+                    basket[i] = b;
+                    basket[j] = a;
 
                 }
-                Console.WriteLine(sb.ToString());
+                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                //for(int x = 0; x< n; x++)
+                //{
+                //    sb.Append($"{ints[x]} ");
+                //}
+                //Console.WriteLine(sb.ToString().TrimEnd());
+
+                Console.WriteLine(string.Join(" ", basket));
             }
             catch (Exception ex)
             {
