@@ -15,7 +15,7 @@ namespace ConsoleApp1
         {
             try
             {
-                Level4Method05();
+                Level4Method07();
 
 
             }
@@ -252,22 +252,36 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region A+B -7
+        #region 과제 안 내신 분
         internal void Level4Method07()
         {
             try
             {
-                int count = Convert.ToInt32(Console.ReadLine());
-                System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                for (int i = 0; i < count; i++)
+                int num = 28;
+                int[] ints = new int[num];
+                for(int i=0;i<num;i++)
                 {
-                    string[] arr = Console.ReadLine().Split(' ');
-                    int a = Convert.ToInt32(arr[0]);
-                    int b = Convert.ToInt32(arr[1]);
-                    sb.Append($"Case #{i + 1}: {a + b}\n");
-
+                    string? str = Console.ReadLine();
+                    if (str == null) continue;
+                    int temp = Convert.ToInt32(str);
+                    ints[i] = temp;
                 }
-                Console.WriteLine(sb.ToString());
+                int cnt2 = 2;
+                int[] answer = new int[cnt2];
+                int cnt = 0;
+                for(int i=1;i<=30; i++)
+                {
+                    if (!ints.Contains(i))
+                    {
+                        answer[cnt] = i;
+                        cnt++;
+                    }
+                }
+                var ints3 = answer.OrderBy(x => x).ToArray();
+                for(int i = 0; i < ints3.Count(); i++)
+                {
+                    Console.WriteLine(ints3[i]);
+                }
             }
             catch (Exception ex)
             {
