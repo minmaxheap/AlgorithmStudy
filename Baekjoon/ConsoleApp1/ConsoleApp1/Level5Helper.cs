@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 namespace ConsoleApp1
 {
     /// <summary>
-    /// Level4. 1차원 배열
+    /// Level5. 문자와 문자열
     /// </summary>
-    internal class Level4Helper
+    internal class Level5Helper
     {
         internal void Run()
         {
             try
             {
-                Level4Method09();
-
+                Level5Method03();
 
             }
             catch (Exception ex)
@@ -26,23 +25,18 @@ namespace ConsoleApp1
             }
         }
 
-        #region 개수세기
-        internal void Level4Method01()
+        #region 문자와 문자열
+        internal void Level5Method01()
         {
             try
             {
-                int count = Convert.ToInt32(Console.ReadLine());
-                string[] arr = Console.ReadLine().Split(' ');
-                int num = Convert.ToInt32(Console.ReadLine());
-
-                int cnt = 0;
-                for (int i = 0; i < count; i++)
-                {
-                    int x = Convert.ToInt32(arr[i]);
-                    if (num == x)
-                        cnt++;
-                }
-                Console.WriteLine(cnt);
+                string? str = Console.ReadLine();
+                if (str == null) return;
+                string? str2 = Console.ReadLine();
+                if(str2 == null) return;
+                int num = Convert.ToInt32(str2);
+                char[] arr = str.ToCharArray();
+                Console.WriteLine(arr[num - 1]);
             }
             catch (Exception ex)
             {
@@ -50,8 +44,8 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region X보다 작은 수
-        internal void Level4Method02()
+        #region 단어 길이 재기
+        internal void Level5Method02()
         {
 
             try
@@ -59,24 +53,7 @@ namespace ConsoleApp1
                 string? str = Console.ReadLine();
                 if (str == null) return;
 
-                string[] arr = str.Split(' ');
-                int cnt = Convert.ToInt32(str[0]);
-                int x = Convert.ToInt32(str[1]);
-
-                string? str2 = Console.ReadLine();
-                if (str2 == null) return;
-                string[] arr2 = str2.Split(' ');
-
-                System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                for (int i = 0; i < cnt; i++)
-                {
-                    int temp = Convert.ToInt32(arr2[i]);
-                    if (temp < x)
-                    {
-                        sb.Append($"{temp} ");
-                    }
-                }
-                Console.WriteLine(sb.ToString().TrimEnd(' '));
+                Console.WriteLine(str.Length);
 
             }
             catch (Exception ex)
@@ -85,82 +62,45 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region 최소, 최대
-        internal void Level4Method03()
+        #region 문자열
+        internal void Level5Method03()
+        {
+            try
+            {
+                string? tmep = Console.ReadLine();
+                if(tmep == null) return;
+                int t = Convert.ToInt32(tmep);
+                char[,] arr = new char[t, 2];
+                for(int i = 0; i < t; i++)
+                {
+                    string? str = Console.ReadLine();
+                    if(str == null) continue;
+                    char first = str.First();
+                    char last = str.Last();
+                    arr[i, 0] = first;
+                    arr[i, 1] = last;
+
+                }
+                for(int j=0; j<t; j++)
+                {
+                    Console.WriteLine($"{arr[j, 0]}{arr[j,1]}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 아스키 코드
+        internal void Level5Method04()
         {
             try
             {
                 string? str = Console.ReadLine();
-                if (str == null) return;
-
-                int cnt = Convert.ToInt32(str);
-
-                string? str2 = Console.ReadLine();
-                if (str2 == null) return;
-                string[] arr2 = str2.Split(' ');
-
-                int min = 0;
-                int max = 0;
-                int[] ints = new int[cnt];
-                for (int i = 0; i < cnt; i++)
-                {
-                    int temp = Convert.ToInt32(arr2[i]);
-                    if (i == 0)
-                    {
-                        min = temp;
-                        max = temp;
-
-                    }
-                    else
-                    {
-                        if (temp < min)
-                        {
-                            min = temp;
-                        }
-                        if (temp > max)
-                        {
-                            max = temp;
-                        }
-
-                    }
-
-                }
-                Console.WriteLine($"{min} {max}");
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-        #endregion
-        #region 최댓값
-        internal void Level4Method04()
-        {
-            try
-            {
-                int cnt = 9;
-                int[] ints = new int[cnt];
-                int max = 0;
-                int index = 0;
-                for (int i = 0; i < cnt; i++)
-                {
-                    string str = Console.ReadLine();
-                    if (str == null) return;
-                    int temp = Convert.ToInt32(str);
-                    //ints[i] = temp;
-                    if (i == 0) max = temp;
-                    else if (temp > max)
-                    {
-                        max = temp;
-                        index = i;
-                    }
-                }
-
-                Console.WriteLine(max);
-                Console.WriteLine(index + 1);
-
-
+                if(str == null) return;
+                Console.WriteLine($"{Convert.ToInt32(str[0])}");
             }
             catch (Exception ex)
             {
@@ -169,7 +109,7 @@ namespace ConsoleApp1
         }
         #endregion
         #region 공 넣기
-        internal void Level4Method05()
+        internal void Level5Method05()
         {
             try
             {
@@ -210,7 +150,7 @@ namespace ConsoleApp1
         }
         #endregion
         #region 공 바꾸기
-        internal void Level4Method06()
+        internal void Level5Method06()
         {
             try
             {
@@ -254,7 +194,7 @@ namespace ConsoleApp1
         }
         #endregion
         #region 과제 안 내신 분
-        internal void Level4Method07()
+        internal void Level5Method07()
         {
             try
             {
@@ -291,7 +231,7 @@ namespace ConsoleApp1
         }
         #endregion
         #region 나머지
-        internal void Level4Method08()
+        internal void Level5Method08()
         {
             try
             {
@@ -326,7 +266,7 @@ namespace ConsoleApp1
         }
         #endregion
         #region 바구니 뒤집기
-        internal void Level4Method09()
+        internal void Level5Method09()
         {
             try
             {
@@ -371,7 +311,7 @@ namespace ConsoleApp1
         }
         #endregion
         #region 평균
-        internal void Level4Method10()
+        internal void Level5Method10()
         {
             try
             {
