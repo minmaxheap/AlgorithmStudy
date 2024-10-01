@@ -16,7 +16,7 @@ namespace ConsoleApp1
         {
             try
             {
-                Level6Method01();
+                Level6Method03();
 
             }
             catch (Exception ex)
@@ -76,6 +76,60 @@ namespace ConsoleApp1
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 별 찍기 - 7
+        internal void Level6Method03()
+        {
+            try
+            {
+                //입력값 숫자 타입으로 변환
+                string? str = Console.ReadLine();
+                if (string.IsNullOrEmpty(str)) return;
+                int n = Convert.ToInt32(str);
+
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+                //n = 5일 때, 
+                //1, 3, 5, 7. 9, 7, 5, 3, 1
+                // 1 : 빈칸 * n-1 + * + 빈칸 * n-1
+                // 2 : 빈칸 * 2n -1 + * * 2n-1 + 
+
+
+                Console.WriteLine(sb.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 팰린드롬인지 확인하기
+        internal void Level6Method04()
+        {
+            try
+            {
+                //입력값 문재 배열형으로 변환
+                string? str = Console.ReadLine();
+                if (string.IsNullOrEmpty(str)) return;
+
+                int result = 0;
+                char[] a = str.ToArray();
+                char[] b = a.Reverse().ToArray();
+                
+                //char 배열로 string 만들기
+                if (str == new string(b)) result = 1;
+
+                Console.WriteLine(result);
+
+            }
+            catch (Exception ex)
+            {
+
                 Console.WriteLine(ex.Message);
             }
         }
