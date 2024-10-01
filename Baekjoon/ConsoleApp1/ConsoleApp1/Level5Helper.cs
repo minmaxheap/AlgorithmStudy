@@ -16,7 +16,7 @@ namespace ConsoleApp1
         {
             try
             {
-                Level5Method03();
+                Level5Method07();
 
             }
             catch (Exception ex)
@@ -33,7 +33,7 @@ namespace ConsoleApp1
                 string? str = Console.ReadLine();
                 if (str == null) return;
                 string? str2 = Console.ReadLine();
-                if(str2 == null) return;
+                if (str2 == null) return;
                 int num = Convert.ToInt32(str2);
                 char[] arr = str.ToCharArray();
                 Console.WriteLine(arr[num - 1]);
@@ -68,22 +68,22 @@ namespace ConsoleApp1
             try
             {
                 string? tmep = Console.ReadLine();
-                if(tmep == null) return;
+                if (tmep == null) return;
                 int t = Convert.ToInt32(tmep);
                 char[,] arr = new char[t, 2];
-                for(int i = 0; i < t; i++)
+                for (int i = 0; i < t; i++)
                 {
                     string? str = Console.ReadLine();
-                    if(str == null) continue;
+                    if (str == null) continue;
                     char first = str.First();
                     char last = str.Last();
                     arr[i, 0] = first;
                     arr[i, 1] = last;
 
                 }
-                for(int j=0; j<t; j++)
+                for (int j = 0; j < t; j++)
                 {
-                    Console.WriteLine($"{arr[j, 0]}{arr[j,1]}");
+                    Console.WriteLine($"{arr[j, 0]}{arr[j, 1]}");
                 }
 
             }
@@ -99,7 +99,7 @@ namespace ConsoleApp1
             try
             {
                 string? str = Console.ReadLine();
-                if(str == null) return;
+                if (str == null) return;
                 Console.WriteLine($"{Convert.ToInt32(str[0])}");
             }
             catch (Exception ex)
@@ -108,40 +108,29 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region 공 넣기
+        #region 숫자의 합
         internal void Level5Method05()
         {
             try
             {
-                string? str = Console.ReadLine();
-                if (str == null) return;
-                string[] arr = str.Split(' ');
-                int n = Convert.ToInt32(arr[0]);
-                int m = Convert.ToInt32(arr[1]);
 
-                int[] basket = new int[n];
-                for (int i = 0; i < m; i++)
+                string? str = Console.ReadLine();
+                string? str2 = Console.ReadLine();
+
+                if (str == null || str2 == null) return;
+
+                int a = Convert.ToInt32(str);
+                int c = 0;
+
+                for (int i = 0; i < a; i++)
                 {
-                    string? str2 = Console.ReadLine();
-                    if (str2 == null) return;
-                    string[] arr2 = str2.Split(' ');
-                    int first = Convert.ToInt32(arr2[0]) - 1;
-                    int last = Convert.ToInt32(arr2[1]) - 1;
-                    int num = Convert.ToInt32(arr2[2]);
-                    for (int j = first; j <= last; j++)
-                    {
-                        basket[j] = num;
-                    }
+                    int temp = Convert.ToInt32(str2.Substring(i, 1));
+
+                    c += temp;
 
                 }
-                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                //for(int x = 0; x< n; x++)
-                //{
-                //    sb.Append($"{ints[x]}");
-                //}
-                //Console.WriteLine(sb.ToString().TrimEnd());
 
-                Console.WriteLine(string.Join(" ", basket));
+                Console.WriteLine(c);
             }
             catch (Exception ex)
             {
@@ -149,43 +138,33 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region 공 바꾸기
+        #region 알파벳 찾기
         internal void Level5Method06()
         {
             try
             {
                 string? str = Console.ReadLine();
+
                 if (str == null) return;
-                string[] arr = str.Split(' ');
-                int n = Convert.ToInt32(arr[0]);
-                int m = Convert.ToInt32(arr[1]);
 
-                int[] basket = new int[n];
-                for (int cnt = 0; cnt < n; cnt++)
+                int a = Convert.ToInt32('a');
+                int z = Convert.ToInt32('z');
+                string result = "";
+
+                for (int i = a; i <= z; i++)
                 {
-                    basket[cnt] = cnt + 1;
-                }
-                for (int x = 0; x < m; x++)
-                {
-                    string? str2 = Console.ReadLine();
-                    if (str2 == null) return;
-                    string[] arr2 = str2.Split(' ');
-                    int i = Convert.ToInt32(arr2[0]) - 1;
-                    int j = Convert.ToInt32(arr2[1]) - 1;
-                    int a = basket[i];
-                    int b = basket[j];
-                    basket[i] = b;
-                    basket[j] = a;
+
+                    if (str.Contains(Convert.ToChar(i)))
+                    {
+
+                        result += $"{str.IndexOf(Convert.ToChar(i))} ";
+                    }
+                    else result += "-1 ";
 
                 }
-                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                //for(int x = 0; x< n; x++)
-                //{
-                //    sb.Append($"{ints[x]} ");
-                //}
-                //Console.WriteLine(sb.ToString().TrimEnd());
 
-                Console.WriteLine(string.Join(" ", basket));
+                Console.WriteLine(result.TrimEnd());
+
             }
             catch (Exception ex)
             {
@@ -193,35 +172,38 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region 과제 안 내신 분
+        #region 문자열 반복
         internal void Level5Method07()
         {
             try
             {
-                int num = 28;
-                int[] ints = new int[num];
+                string? str = Console.ReadLine();
+                if (str == null) return;
+                int num = Convert.ToInt32(str);
+                string[] arr2 = new string[num];
                 for (int i = 0; i < num; i++)
                 {
-                    string? str = Console.ReadLine();
-                    if (str == null) continue;
-                    int temp = Convert.ToInt32(str);
-                    ints[i] = temp;
-                }
-                int cnt2 = 2;
-                int[] answer = new int[cnt2];
-                int cnt = 0;
-                for (int i = 1; i <= 30; i++)
-                {
-                    if (!ints.Contains(i))
+                    str = Console.ReadLine();
+                    if (str == null) return;
+                    string[] arr = str.Split(' ');
+                    int cnt = Convert.ToInt32(arr[0]);
+                    string str2 = arr[1];
+
+                    for(int j = 0; j < str2.Length; j++)
                     {
-                        answer[cnt] = i;
-                        cnt++;
+                        char a = str2[j];
+                        for(int k = 0; k< cnt; k++)
+                        {
+                            arr2[i] += $"{a.ToString()}";
+
+                        }
                     }
+
                 }
-                var ints3 = answer.OrderBy(x => x).ToArray();
-                for (int i = 0; i < ints3.Count(); i++)
+                for(int i = 0; i < num; i++)
                 {
-                    Console.WriteLine(ints3[i]);
+                    Console.WriteLine(arr2[i]);
+
                 }
             }
             catch (Exception ex)
@@ -230,32 +212,111 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region 나머지
+        #region 단어의 개수
         internal void Level5Method08()
         {
             try
             {
-                int cnt = 10;
-                int num = 42;
-                int count = 0;
-                string str = string.Empty;
-                int[] ints = new int[cnt];
-                for (int i = 0; i < cnt; i++)
+                string str = Console.ReadLine();
+                if(str == null) return;
+                string[] arr = str.Split(' ');
+                int cnt = 0;
+                for(int i =0; i<arr.Length; i++)
                 {
-                    string? temp = Console.ReadLine();
-                    if (temp == null) continue;
-                    int value = Convert.ToInt32(temp);
-                    //string remain = (value % num).ToString();
-                    //if (!str.Contains(remain))
-                    //{
-                    //    str += $"{remain},";
-                    //}
-                    int remain = value % num;
-                    ints[i] = remain;
-
+                    if (!string.IsNullOrWhiteSpace(arr[i]))
+                        cnt++;
                 }
-                //string[] arr = str.Split(',');
-                var result = ints.Distinct().Count();
+                Console.WriteLine(cnt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 상수
+        internal void Level5Method09()
+        {
+            try
+            {
+                string? str = Console.ReadLine();
+                if (str == null) return;
+                string[] arr = str.Split(' ');
+
+                char[] arr1 = arr[0].ToCharArray();
+                char[] arr2 = arr[1].ToCharArray();
+
+                char[] arr1R = arr1.Reverse().ToArray();
+                char[] arr2R = arr2.Reverse().ToArray();
+
+                string str1 = string.Concat(arr1R);
+                string str2 = string.Concat(arr2R);
+
+                int num1 = Convert.ToInt32(str1);
+                int num2 = Convert.ToInt32(str2);
+
+                Console.WriteLine(num1 > num2 ? num1 : num2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        #endregion
+        #region 다이얼
+        internal void Level5Method10()
+        {
+            try
+            {
+                string? str = Console.ReadLine();
+                if (str == null) return;
+                string[] arr = new string[10];
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            arr[i] = ""; 
+                            break;
+                        case 1:
+                            arr[i] = "ABC";
+                            break;
+                        case 2:
+                            arr[i] = "DEF";
+                            break;
+                        case 3:
+                            arr[i] = "GHI";
+                            break;
+                        case 4:
+                            arr[i] = "JKL";
+                            break;
+                        case 5:
+                            arr[i] = "MNO";
+                            break;
+                        case 6:
+                            arr[i] = "PQRS";
+                            break;
+                        case 7:
+                            arr[i] = "TUV";
+                            break;
+                        case 8:
+                            arr[i] = "WXYZ";
+                            break;
+                        case 9:
+                            break;
+                        default:
+                            break;
+
+                    }
+                }
+                char[] charArr = str.ToCharArray();
+                int result = 0;
+                for (int i = 0; i < charArr.Length; i++)
+                {
+                    char s = charArr[i];
+                    var temp = Array.FindIndex(arr,(x) => x.Contains(s));
+                    result += (temp + 1) + 1;
+                }
                 Console.WriteLine(result);
 
             }
@@ -265,72 +326,18 @@ namespace ConsoleApp1
             }
         }
         #endregion
-        #region 바구니 뒤집기
-        internal void Level5Method09()
+        #region 그대로 출력하기
+        internal void Level5Method11()
         {
             try
             {
-                string? str = Console.ReadLine();
-                if (str == null) return;
-                string[] arr = str.Split(' ');
-                int n = Convert.ToInt32(arr[0]);
-                int m = Convert.ToInt32(arr[1]);
-                int[] ints = new int[n];
-                for (int i = 0; i < n; i++)
+                while (true)
                 {
-                    ints[i] = i + 1;
+                    string? str = Console.ReadLine();
+                    Console.WriteLine(str);
+                    if (string.IsNullOrEmpty(str))
+                        return;
                 }
-                for (int i = 0; i < m; i++)
-                {
-                    string? tempStr = Console.ReadLine();
-                    if (tempStr == null) continue;
-                    string[] tempArr = tempStr.Split(' ');
-                    int a = Convert.ToInt32(tempArr[0]) - 1;
-                    int b = Convert.ToInt32(tempArr[1]) - 1;
-                    while (a<=b)
-                    {
-                        int temp = ints[b];
-                        ints[b] = ints[a];
-                        ints[a] = temp;
-                        a++;
-                        b--;
-
-                    }
-                    
-                }
-                for(int i = 0; i < n;i++)
-                {
-                    Console.Write($"{ints[i]} ");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-        #endregion
-        #region 평균
-        internal void Level5Method10()
-        {
-            try
-            {
-                string? str = Console.ReadLine();
-                if (str == null) return;
-                int n = Convert.ToInt32(str);
-                str = Console.ReadLine();
-                if(str==null) return;
-                string[] arr = str.Split(" ");
-                double[] scores = new double[n];
-                for(int i = 0;i < n;i++) scores[i] = Convert.ToDouble(arr[i]);
-                double max = scores.Max();
-                for (int i = 0; i < n; i++)
-                {
-                    double temp = scores[i];
-                    scores[i] = temp / max * 100;
-                }
-                Console.WriteLine(scores.Average());
-
 
             }
             catch (Exception ex)
